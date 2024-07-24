@@ -1,8 +1,6 @@
 package com.luv2code.junitdemo;
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
@@ -11,13 +9,32 @@ class DemoUtilsTest {
 
     private DemoUtils demoUtils;
 
+    @BeforeAll
+    static void beforeAll() {
+        System.out.println("@BeforeAll executes only once before the execution of all test methods in class");
+    }
+
     @BeforeEach
-    void setUp() {
+    void beforeEach() {
         demoUtils = new DemoUtils();
+        System.out.println("@BeforeEach executes before the execution of each test method");
+    }
+
+    @AfterEach
+    void afterEach() {
+        System.out.println("Running @AfterEach");
+        System.out.println();
+    }
+
+    @AfterAll
+    static void afterAll() {
+        System.out.println("@AfterAll executes after the execution of all test methods in class");
     }
 
     @Test
     void testEqualsAndNotEquals() {
+        System.out.println("Running test: testEqualsAndNotEquals");
+
         int expected = 6;
         int unexpected = 8;
 
@@ -31,6 +48,8 @@ class DemoUtilsTest {
 
     @Test
     void testCheckIsNullOrNotNull() {
+        System.out.println("Running test: testCheckIsNullOrNotNull");
+
         String str1 = null;
         String str2 = "luv2code";
 
