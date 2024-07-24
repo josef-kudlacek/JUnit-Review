@@ -5,7 +5,7 @@ import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 
-@DisplayNameGeneration(DisplayNameGenerator.ReplaceUnderscores.class)
+@DisplayNameGeneration(DisplayNameGenerator.IndicativeSentences.class)
 class DemoUtilsTest {
 
     private DemoUtils demoUtils;
@@ -33,8 +33,7 @@ class DemoUtilsTest {
 //    }
 
     @Test
-//    @DisplayName("Equals and Not Equals")
-    void test_Equals_AndNotEquals() {
+    void testEqualsAndNotEquals() {
         int expected = 6;
         int unexpected = 8;
 
@@ -47,8 +46,7 @@ class DemoUtilsTest {
     }
 
     @Test
-//    @DisplayName("Null and Not Null")
-    void test_CheckIsNull_OrNotNull() {
+    void testCheckIsNullOrNotNull() {
         String str1 = null;
         String str2 = "luv2code";
 
