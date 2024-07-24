@@ -5,36 +5,36 @@ import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 
+
 class DemoUtilsTest {
 
     private DemoUtils demoUtils;
 
-    @BeforeAll
-    static void beforeAll() {
-        System.out.println("@BeforeAll executes only once before the execution of all test methods in class");
-    }
-
+//    @BeforeAll
+//    static void beforeAll() {
+//        System.out.println("@BeforeAll executes only once before the execution of all test methods in class");
+//    }
+//
     @BeforeEach
     void beforeEach() {
         demoUtils = new DemoUtils();
         System.out.println("@BeforeEach executes before the execution of each test method");
     }
-
-    @AfterEach
-    void afterEach() {
-        System.out.println("Running @AfterEach");
-        System.out.println();
-    }
-
-    @AfterAll
-    static void afterAll() {
-        System.out.println("@AfterAll executes after the execution of all test methods in class");
-    }
+//
+//    @AfterEach
+//    void afterEach() {
+//        System.out.println("Running @AfterEach");
+//        System.out.println();
+//    }
+//
+//    @AfterAll
+//    static void afterAll() {
+//        System.out.println("@AfterAll executes after the execution of all test methods in class");
+//    }
 
     @Test
+    @DisplayName("Equals and Not Equals")
     void testEqualsAndNotEquals() {
-        System.out.println("Running test: testEqualsAndNotEquals");
-
         int expected = 6;
         int unexpected = 8;
 
@@ -47,9 +47,8 @@ class DemoUtilsTest {
     }
 
     @Test
+    @DisplayName("Null and Not Null")
     void testCheckIsNullOrNotNull() {
-        System.out.println("Running test: testCheckIsNullOrNotNull");
-
         String str1 = null;
         String str2 = "luv2code";
 
