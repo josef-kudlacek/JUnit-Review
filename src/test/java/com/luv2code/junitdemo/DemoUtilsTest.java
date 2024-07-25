@@ -19,6 +19,12 @@ class DemoUtilsTest {
     }
 
     @Test
+    @DisplayName("Multiply")
+    void testMultiply() {
+        assertEquals(12, demoUtils.multiply(4, 3), "4*3 must be 12");
+    }
+
+    @Test
     @DisplayName("Equals and Not Equals")
     @Order(3)
     void testEqualsAndNotEquals() {
