@@ -2,8 +2,7 @@ package com.luv2code.junitdemo;
 
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.condition.EnabledOnOs;
-import org.junit.jupiter.api.condition.OS;
+import org.junit.jupiter.api.condition.*;
 
 public class ConditionalTest {
 
@@ -34,6 +33,30 @@ public class ConditionalTest {
     @Test
     @EnabledOnOs({OS.WINDOWS, OS.LINUX})
     void testForLinuxAndWindowsOnly() {
+        // execute method and perform asserts
+    }
+
+    @Test
+    @EnabledOnJre(JRE.JAVA_17)
+    void testForOnlyForJava17() {
+        // execute method and perform asserts
+    }
+
+    @Test
+    @EnabledOnJre(JRE.JAVA_13)
+    void testForOnlyForJava13() {
+        // execute method and perform asserts
+    }
+
+    @Test
+    @EnabledForJreRange(min=JRE.JAVA_13, max=JRE.JAVA_18)
+    void testOnlyForJavaRange() {
+        // execute method and perform asserts
+    }
+
+    @Test
+    @EnabledForJreRange(min=JRE.JAVA_13)
+    void testOnlyForJavaRangeMin() {
         // execute method and perform asserts
     }
 }
