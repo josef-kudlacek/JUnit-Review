@@ -8,7 +8,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 //@DisplayNameGeneration(DisplayNameGenerator.IndicativeSentences.class)
-@TestMethodOrder(MethodOrderer.MethodName.class)
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class DemoUtilsTest {
 
     private DemoUtils demoUtils;
@@ -20,6 +20,7 @@ class DemoUtilsTest {
 
     @Test
     @DisplayName("Equals and Not Equals")
+    @Order(3)
     void testEqualsAndNotEquals() {
         int expected = 6;
         int unexpected = 8;
@@ -34,6 +35,7 @@ class DemoUtilsTest {
 
     @Test
     @DisplayName("Null and Not Null")
+    @Order(-7)
     void testCheckIsNullOrNotNull() {
         String str1 = null;
         String str2 = "luv2code";
@@ -96,6 +98,7 @@ class DemoUtilsTest {
 
     @Test
     @DisplayName("Timeout")
+    @Order(1)
     void testTimeout() {
         assertTimeoutPreemptively(Duration.ofSeconds(3), () -> {demoUtils.checkTimeout();}, "Method should execute in 3 seconds");
     }
